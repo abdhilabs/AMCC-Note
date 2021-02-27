@@ -13,6 +13,7 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.ViewHolder>() {
     private var onItemClickListener: ((Note) -> Unit)? = null
     private var onItemDeleteClickListener: ((Note) -> Unit)? = null
 
+    // Fungsi untuk mengisi data
     fun fillNote(note: List<Note>) {
         listNote.clear()
         listNote.addAll(note)
@@ -39,10 +40,12 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.ViewHolder>() {
 
     override fun getItemCount(): Int = listNote.size
 
+    // Fungsi untuk Item Click
     fun setOnItemClickListener(listener: (Note) -> Unit) {
         onItemClickListener = listener
     }
 
+    // Fungsi untuk Item Click Delete
     fun setOnItemDeleteClickListener(listener: (Note) -> Unit) {
         onItemDeleteClickListener = listener
     }
